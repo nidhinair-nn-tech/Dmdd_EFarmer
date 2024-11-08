@@ -63,7 +63,7 @@ After creating the tables and views, navigate to the DML folder and populate the
 
 2.Consumer_Insert.sql
 
-3.PRODUCT_Insert.sql
+3.Product_Insert.sql
 
 4.Inventory_Insert.sql
 
