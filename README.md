@@ -27,33 +27,53 @@ Use the credentials from the above script to establish a connection with the app
 Navigate to the DDL folder and execute the scripts in the following order to create the required database tables:
 
 1.Farmer.sql
+
 2.Consumer.sql
+
 3.Product.sql
+
 4.Inventory.sql
+
 5.Order_Item_DDL.sql
+
 6.Order_DDL.sql
+
 7.PaymentsDDL.sql
+
 8.LogisticsDDL.sql
 
 After creating the tables, execute the scripts below to create views:
 
 1.Consumer_View.sql
+
 2.Inactive_Products_View.sql
+
+
 3.CurrentInventoryStatusView.sql
+
 4.Discount_On_Perishable_View.sql
+
 5.WeekWiseSalesView.sql
+
 6.TopSellingView.sql
 
 ## Step 3: Execute Data Manipulation Language (DML) Scripts
 After creating the tables and views, navigate to the DML folder and populate the tables with sample data by executing the following scripts in order:
 
 1.Farmer_Insert.sql
+
 2.Consumer_Insert.sql
+
 3.PRODUCT_Insert.sql
+
 4.Inventory_Insert.sql
+
 5.OrderItemsDML.sql
+
 6.OrderDML.sql
+
 7.PaymentsDDL.sql
+
 8.LogisticsDDL.sql
 
 ## Step 4: Create Users and Grant Access
