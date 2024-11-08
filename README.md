@@ -1,4 +1,4 @@
-# E-Farmer: Online Shopping Portal for Agricultural Marketing
+# E-Farmer: Online Farming Shopping Portal 
 
 ## Project Description
 E-Farmer is an Online Transaction Processing (OLTP) system that directly connects farmers with consumers, facilitating the purchase and sale of agricultural products without intermediaries. The system streamlines order processing, payment handling, and logistics, enhancing transparency and efficiency across the supply chain.
