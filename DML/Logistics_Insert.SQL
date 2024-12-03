@@ -88,5 +88,4 @@ BEGIN
 
 
 END;
-
-select * from product;
+/
