@@ -61,5 +61,3 @@ BEGIN
     COMMIT;
 END;
 /
-
-select * from order_item;
