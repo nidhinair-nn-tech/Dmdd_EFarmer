@@ -34,9 +34,9 @@ Navigate to the DDL folder and execute the scripts in the following order to cre
 
 4.Inventory.sql
 
-5.Order_Item.sql
+5.Order.sql
 
-6.Order.sql
+6.Order_Item.sql
 
 7.Payments.sql
 
@@ -67,9 +67,9 @@ After creating the tables and views, navigate to the DML folder and populate the
 
 4.Inventory_Insert.sql
 
-5.Order_Items_Insert.sql
+5.Order_Insert.sql
 
-6.Order_Insert.sql
+6.Order_Items_Insert.sql
 
 7.Payments_Insert.sql
 
