@@ -72,5 +72,3 @@ BEGIN
     END;
 END;
 /
-
-select * from orders;
