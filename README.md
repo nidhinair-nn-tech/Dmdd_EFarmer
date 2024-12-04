@@ -34,20 +34,19 @@ Navigate to the DDL folder and execute the scripts in the following order to cre
 
 4.Inventory.sql
 
-5.Order_Item_DDL.sql
+5.Order.sql
 
-6.Order_DDL.sql
+6.Order_Item.sql
 
-7.PaymentsDDL.sql
+7.Payments.sql
 
-8.LogisticsDDL.sql
+8.Logistics.sql
 
 After creating the tables, execute the scripts below to create views:
 
 1.Consumer_View.sql
 
 2.Inactive_Products_View.sql
-
 
 3.CurrentInventoryStatusView.sql
 
@@ -64,17 +63,17 @@ After creating the tables and views, navigate to the DML folder and populate the
 
 2.Consumer_Insert.sql
 
-3.PRODUCT_Insert.sql
+3.Product_Insert.sql
 
 4.Inventory_Insert.sql
 
-5.OrderItemsDML.sql
+5.Order_Insert.sql
 
-6.OrderDML.sql
+6.Order_Items_Insert.sql
 
-7.PaymentsDDL.sql
+7.Payments_Insert.sql
 
-8.LogisticsDDL.sql
+8.Logistics_Insert.sql
 
 ## Step 4: Create Users and Grant Access
 To set up standard users and assign them the appropriate roles, execute the following script:
