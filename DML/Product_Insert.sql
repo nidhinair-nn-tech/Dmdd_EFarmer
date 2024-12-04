@@ -12,7 +12,7 @@ BEGIN
     -- Insert sample data into PRODUCT table
     BEGIN
         INSERT INTO PRODUCT (product_id, farmer_id, product_name, category, price_per_quantity, unit_of_measure, available_quantity, status, reorder_threshold)
-        VALUES (101, 1, 'Carrots', 'Vegetables', 1.50, 'kg', 50, 'Available', 10);
+        VALUES (101, 1, 'Carrots', 'Perishable', 1.50, 'kg', 50, 'Active', 10);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate product_id found. Skipping insertion.');
@@ -22,7 +22,7 @@ BEGIN
 
     BEGIN
         INSERT INTO PRODUCT (product_id, farmer_id, product_name, category, price_per_quantity, unit_of_measure, available_quantity, status, reorder_threshold)
-        VALUES (102, 2, 'Tomatoes', 'Vegetables', 2.00, 'kg', 80, 'Available', 20);
+        VALUES (102, 2, 'Tomatoes', 'Perishable', 2.00, 'kg', 80, 'Active', 10);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate product_id found. Skipping insertion.');
@@ -32,7 +32,7 @@ BEGIN
 
     BEGIN
         INSERT INTO PRODUCT (product_id, farmer_id, product_name, category, price_per_quantity, unit_of_measure, available_quantity, status, reorder_threshold)
-        VALUES (103, 1, 'Milk', 'Dairy', 1.20, 'liter', 100, 'Available', 30);
+        VALUES (103, 1, 'Milk', 'Perishable', 1.20, 'liter', 100, 'Active', 10);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate product_id found. Skipping insertion.');
@@ -42,7 +42,7 @@ BEGIN
 
     BEGIN
         INSERT INTO PRODUCT (product_id, farmer_id, product_name, category, price_per_quantity, unit_of_measure, available_quantity, status, reorder_threshold)
-        VALUES (104, 2, 'Cheese', 'Dairy', 3.50, 'kg', 25, 'Available', 5);
+        VALUES (104, 2, 'Cereal', 'Non-Perishable', 150, 'kg', 25, 'Active', 10);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate product_id found. Skipping insertion.');
@@ -52,7 +52,7 @@ BEGIN
 
     BEGIN
         INSERT INTO PRODUCT (product_id, farmer_id, product_name, category, price_per_quantity, unit_of_measure, available_quantity, status, reorder_threshold)
-        VALUES (105, 1, 'Apples', 'Fruit', 2.50, 'kg', 60, 'Available', 15);
+        VALUES (105, 1, 'Rice', 'Perishable', 60, 'kg', 60, 'Active', 10);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate product_id found. Skipping insertion.');
