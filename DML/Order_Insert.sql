@@ -12,7 +12,7 @@ BEGIN
     -- Inserting data into the ORDERS table
     BEGIN
         INSERT INTO ORDERS (order_id, order_date, order_amount, delivery_date, order_status,consumer_id)
-        VALUES (123456, TO_DATE('2024-03-15', 'YYYY-MM-DD'), 100.00,TO_DATE('2024-03-25', 'YYYY-MM-DD'),'Pending',1);
+        VALUES (Order_SEQ.NEXTVAL, TO_DATE('2024-03-15', 'YYYY-MM-DD'), 100.00,TO_DATE('2024-03-25', 'YYYY-MM-DD'),'Pending',1);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate order_id found. Skipping insertion.');
@@ -25,7 +25,7 @@ BEGIN
 
     BEGIN
         INSERT INTO ORDERS (order_id, order_date, order_amount, delivery_date, order_status,consumer_id)
-        VALUES (654321, TO_DATE('2024-03-16', 'YYYY-MM-DD'), 150.50,TO_DATE('2024-03-26', 'YYYY-MM-DD'), 'Completed',2);
+        VALUES (Order_SEQ.NEXTVAL, TO_DATE('2024-03-16', 'YYYY-MM-DD'), 150.50,TO_DATE('2024-03-26', 'YYYY-MM-DD'), 'Completed',2);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate order_id found. Skipping insertion.');
@@ -37,7 +37,7 @@ BEGIN
     
     BEGIN
         INSERT INTO ORDERS (order_id, order_date, order_amount, delivery_date, order_status,consumer_id)
-        VALUES (234567, TO_DATE('2024-03-17', 'YYYY-MM-DD'), 75.25, TO_DATE('2024-03-27', 'YYYY-MM-DD'), 'Pending',3);
+        VALUES (Order_SEQ.NEXTVAL, TO_DATE('2024-03-17', 'YYYY-MM-DD'), 75.25, TO_DATE('2024-03-27', 'YYYY-MM-DD'), 'Pending',3);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate order_id found. Skipping insertion.');
@@ -49,7 +49,7 @@ BEGIN
     
      BEGIN
        INSERT INTO ORDERS (order_id, order_date, order_amount, delivery_date, order_status,consumer_id)
-        VALUES (324511, TO_DATE('2024-03-18', 'YYYY-MM-DD'), 200.00,TO_DATE('2024-03-28', 'YYYY-MM-DD'), 'Processing',4);
+        VALUES (Order_SEQ.NEXTVAL, TO_DATE('2024-03-18', 'YYYY-MM-DD'), 200.00,TO_DATE('2024-03-28', 'YYYY-MM-DD'), 'Processing',4);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate order_id found. Skipping insertion.');
@@ -61,7 +61,7 @@ BEGIN
     
     BEGIN
        INSERT INTO ORDERS (order_id, order_date, order_amount, delivery_date, order_status,consumer_id)
-        VALUES (987654, TO_DATE('2024-03-19', 'YYYY-MM-DD'), 50.75, TO_DATE('2024-03-29', 'YYYY-MM-DD'), 'Completed',5);
+        VALUES (Order_SEQ.NEXTVAL, TO_DATE('2024-03-19', 'YYYY-MM-DD'), 50.75, TO_DATE('2024-03-29', 'YYYY-MM-DD'), 'Completed',5);
     EXCEPTION
         WHEN v_constraint_violation_pk THEN
             DBMS_OUTPUT.PUT_LINE('Duplicate order_id found. Skipping insertion.');
