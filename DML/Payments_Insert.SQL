@@ -26,7 +26,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 123456;
         IF v_order_exists > 0 THEN
             INSERT INTO Payments (payment_id, payment_method, payment_status, transaction_date, order_order_id)
-            VALUES (1, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 123456);
+            VALUES (Payment_SEQ.NEXTVAL, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 123456);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_id 123456 does not exist. Skipping insertion for payment_id 1.');
         END IF;
@@ -45,7 +45,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 123456;
         IF v_order_exists > 0 THEN
             INSERT INTO Payments (payment_id, payment_method, payment_status, transaction_date, order_order_id)
-            VALUES (2, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 654321);
+            VALUES (Payment_SEQ.NEXTVAL, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 654321);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_id 123456 does not exist. Skipping insertion for payment_id 1.');
         END IF;
@@ -64,7 +64,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 123456;
         IF v_order_exists > 0 THEN
             INSERT INTO Payments (payment_id, payment_method, payment_status, transaction_date, order_order_id)
-            VALUES (3, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 234567);
+            VALUES (Payment_SEQ.NEXTVAL, 'Credit Card', 'Completed', TO_TIMESTAMP('2024-11-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 234567);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_id 123456 does not exist. Skipping insertion for payment_id 1.');
         END IF;
@@ -85,7 +85,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 654321;
         IF v_order_exists > 0 THEN
             INSERT INTO Payments (payment_id, payment_method, payment_status, transaction_date, order_order_id)
-            VALUES (4, 'PayPal', 'Pending', TO_TIMESTAMP('2024-11-02 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 324511);
+            VALUES (Payment_SEQ.NEXTVAL, 'PayPal', 'Pending', TO_TIMESTAMP('2024-11-02 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 324511);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_id 654321 does not exist. Skipping insertion for payment_id 2.');
         END IF;
@@ -104,7 +104,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 654321;
         IF v_order_exists > 0 THEN
             INSERT INTO Payments (payment_id, payment_method, payment_status, transaction_date, order_order_id)
-            VALUES (5, 'PayPal', 'Pending', TO_TIMESTAMP('2024-11-02 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 987654);
+            VALUES (Payment_SEQ.NEXTVAL, 'PayPal', 'Pending', TO_TIMESTAMP('2024-11-02 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 987654);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_id 654321 does not exist. Skipping insertion for payment_id 2.');
         END IF;

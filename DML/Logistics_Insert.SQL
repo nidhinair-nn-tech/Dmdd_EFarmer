@@ -28,7 +28,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 123456;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (1, 'Shipped', TO_DATE('2024-11-05', 'YYYY-MM-DD'), 123456);
+            VALUES (Logistics_SEQ.NEXTVAL, 'Shipped', TO_DATE('2024-11-05', 'YYYY-MM-DD'), 123456);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 123456 does not exist. Skipping insertion for shipment_id 1.');
         END IF;
@@ -48,7 +48,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 654321;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (2, 'In Transit', TO_DATE('2024-11-06', 'YYYY-MM-DD'), 654321);
+            VALUES (Logistics_SEQ.NEXTVAL, 'In Transit', TO_DATE('2024-11-06', 'YYYY-MM-DD'), 654321);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 654321 does not exist. Skipping insertion for shipment_id 2.');
         END IF;
@@ -68,7 +68,7 @@ BEGIN
         SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 234567;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (3, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 234567);
+            VALUES (Logistics_SEQ.NEXTVAL, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 234567);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 234567 does not exist. Skipping insertion for shipment_id 3.');
         END IF;

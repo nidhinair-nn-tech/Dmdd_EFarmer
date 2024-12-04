@@ -26,6 +26,7 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON WEEK_WISE_SELLINGS TO farmer';
     EXECUTE IMMEDIATE 'GRANT SELECT ON INACTIVE_PRODUCTS_VIEW TO farmer';
     EXECUTE IMMEDIATE 'GRANT SELECT ON CURRENT_INVENTORY TO farmer';
+    EXECUTE IMMEDIATE 'GRANT EXECUTE ON add_product_proc TO farmer';
 
 
 
@@ -53,7 +54,23 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON Payments TO consumer';
     EXECUTE IMMEDIATE 'GRANT SELECT ON Logistics TO consumer';
     EXECUTE IMMEDIATE 'GRANT SELECT ON discount_on_perishable_items TO consumer';
-    EXECUTE IMMEDIATE 'GRANT SELECT ON CONSUMER_PRODUCTS_VIEW TO consumer_role';
+    EXECUTE IMMEDIATE 'GRANT SELECT ON CONSUMER_PRODUCTS_VIEW TO consumer';
+    EXECUTE IMMEDIATE 'GRANT EXECUTE ON process_order_proc TO consumer';
+    EXECUTE IMMEDIATE 'GRANT EXECUTE ON payment_proc TO consumer';
+
+    DBMS_OUTPUT.PUT_LINE('Users created and privileges granted successfully.');
+END;
+
+
+  -- Creating user logistic_partner
+    EXECUTE IMMEDIATE 'CREATE USER logistic_partner IDENTIFIED BY logisticagriculture123';
+    EXECUTE IMMEDIATE 'GRANT CONNECT, RESOURCE TO logistic_partner';
+
+
+    -- Grant specific privileges to consumer
+    EXECUTE IMMEDIATE 'GRANT SELECT ON Logistics TO logistic_partner';
+    EXECUTE IMMEDIATE 'GRANT SELECT ON PendingDeliveries_View TO logistic_partner';
+    EXECUTE IMMEDIATE 'GRANT EXECUTE ON update_logistics_proc TO logistic_partner';
 
 
     DBMS_OUTPUT.PUT_LINE('Users created and privileges granted successfully.');
