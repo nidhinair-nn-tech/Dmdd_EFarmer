@@ -27,3 +27,4 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Logistics record created successfully for Order ID: ' || p_order_id);
 END;
 /
+GRANT EXECUTE ON update_logistics TO logistic_partner;

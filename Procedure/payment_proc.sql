@@ -24,3 +24,4 @@ BEGIN
     END IF;
 END;
 /
+GRANT EXECUTE ON process_payment TO consumer;
