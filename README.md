@@ -110,6 +110,8 @@ Once the Procedure script execution is successful, the different function script
 4. get_failed_payment_consumer_function.sql
 
 ## Step 5: Execute Report
+After the successful execution of Functions, the four report scripts need to be executed.
+
 1. get_average_order_value_function.sql
 
 2. get_category_wise_inventory_function.sql
