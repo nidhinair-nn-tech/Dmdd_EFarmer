@@ -25,10 +25,10 @@ BEGIN
 
 
     BEGIN
-        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 123456;
+        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 1;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (Logistics_SEQ.NEXTVAL, 'Shipped', TO_DATE('2024-11-05', 'YYYY-MM-DD'), 123456);
+            VALUES (Logistics_SEQ.NEXTVAL, 'Shipped', TO_DATE('2024-11-05', 'YYYY-MM-DD'), 1);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 123456 does not exist. Skipping insertion for shipment_id 1.');
         END IF;
@@ -45,10 +45,10 @@ BEGIN
 
 
     BEGIN
-        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 654321;
+        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 2;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (Logistics_SEQ.NEXTVAL, 'In Transit', TO_DATE('2024-11-06', 'YYYY-MM-DD'), 654321);
+            VALUES (Logistics_SEQ.NEXTVAL, 'In Transit', TO_DATE('2024-11-06', 'YYYY-MM-DD'), 2);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 654321 does not exist. Skipping insertion for shipment_id 2.');
         END IF;
@@ -65,10 +65,48 @@ BEGIN
 
 
     BEGIN
-        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 234567;
+        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 3;
         IF v_order_exists > 0 THEN
             INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
-            VALUES (Logistics_SEQ.NEXTVAL, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 234567);
+            VALUES (Logistics_SEQ.NEXTVAL, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 3);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Order_order_id 234567 does not exist. Skipping insertion for shipment_id 3.');
+        END IF;
+    EXCEPTION
+        WHEN v_constraint_violation_pk THEN
+            DBMS_OUTPUT.PUT_LINE('Duplicate shipment_id found for 3. Skipping insertion.');
+        WHEN v_fk_violation THEN
+            DBMS_OUTPUT.PUT_LINE('Foreign key constraint violated for shipment_id 3.');
+        WHEN v_order_null THEN
+            DBMS_OUTPUT.PUT_LINE('Order_order_id cannot be null for shipment_id 3. Skipping insertion.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('An error occurred while inserting shipment 3: ' || SQLERRM);
+    END;
+    
+       BEGIN
+        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 4;
+        IF v_order_exists > 0 THEN
+            INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
+            VALUES (Logistics_SEQ.NEXTVAL, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 4);
+        ELSE
+            DBMS_OUTPUT.PUT_LINE('Order_order_id 234567 does not exist. Skipping insertion for shipment_id 3.');
+        END IF;
+    EXCEPTION
+        WHEN v_constraint_violation_pk THEN
+            DBMS_OUTPUT.PUT_LINE('Duplicate shipment_id found for 3. Skipping insertion.');
+        WHEN v_fk_violation THEN
+            DBMS_OUTPUT.PUT_LINE('Foreign key constraint violated for shipment_id 3.');
+        WHEN v_order_null THEN
+            DBMS_OUTPUT.PUT_LINE('Order_order_id cannot be null for shipment_id 3. Skipping insertion.');
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('An error occurred while inserting shipment 3: ' || SQLERRM);
+    END;
+    
+       BEGIN
+        SELECT COUNT(1) INTO v_order_exists FROM Orders WHERE order_id = 5;
+        IF v_order_exists > 0 THEN
+            INSERT INTO Logistics (shipment_id, delivery_status, estimated_delivery_date, order_order_id)
+            VALUES (Logistics_SEQ.NEXTVAL, 'Delivered', TO_DATE('2024-11-07', 'YYYY-MM-DD'), 5);
         ELSE
             DBMS_OUTPUT.PUT_LINE('Order_order_id 234567 does not exist. Skipping insertion for shipment_id 3.');
         END IF;
