@@ -56,7 +56,7 @@ After creating the tables, execute the scripts below to create views:
 
 6.TopSellingView.sql
 
-PendingDeliveries_View.sql
+7. PendingDeliveries_View.sql
 
 ## Step 3: Execute Sequence Creation Script
 Run the Sequence_Creation.sql to create necessary sequences for Orders, Order_Item, Payments and Logistics tables
