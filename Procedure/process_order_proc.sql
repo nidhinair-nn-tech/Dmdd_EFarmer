@@ -64,3 +64,4 @@ EXCEPTION
         ROLLBACK; -- Ensure atomicity
 END;
 /
+GRANT EXECUTE ON process_order TO consumer;
