@@ -28,8 +28,8 @@ BEGIN
     END IF;
 
     -- Insert into Orders
-    INSERT INTO Orders (order_id,order_date, order_amount, order_status, consumer_id)
-    VALUES (Order_SEQ.NEXTVAL,SYSDATE, v_total_price, 'Pending', p_consumer_id)
+    INSERT INTO Orders (order_id,order_date, order_amount, order_status, consumer_id, delivery_date)
+    VALUES (Order_SEQ.NEXTVAL,SYSDATE, v_total_price, 'Pending', p_consumer_id,Sysdate+3)
     RETURNING order_id INTO v_order_id;
 
     -- Insert into Order_Items
