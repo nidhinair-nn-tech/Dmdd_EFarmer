@@ -58,10 +58,15 @@ After creating the tables, execute the scripts below to create views:
 
 7. PendingDeliveries_View.sql
 
-## Step 3: Execute Sequence Creation Script
+## Step 3: Create Users and Grant Access
+To set up standard users and assign them the appropriate roles, execute the following script:
+
+User_grant.sql - This script creates user accounts for farmers, consumers and other roles, granting them the necessary permissions to interact with the database.
+
+## Step 4: Execute Sequence Creation Script
 Run the Sequence_Creation.sql to create necessary sequences for Orders, Order_Item, Payments and Logistics tables
 
-## Step 4: Execute Data Manipulation Language (DML) Scripts
+## Step 5: Execute Data Manipulation Language (DML) Scripts
 After creating the tables and views, navigate to the DML folder and populate the tables with sample data by executing the following scripts in order:
 
 1.Farmer_Insert.sql
@@ -80,14 +85,14 @@ After creating the tables and views, navigate to the DML folder and populate the
 
 8.Logistics_Insert.sql
 
-## Step 5: Execute Trigger Scripts
+## Step 6: Execute Trigger Scripts
 After the population of sample data using the DML scripts, triggers need to be executed from the Triggers folder:
 
 1. Active_Inactive_Trigger.sql
 
 2. logistic_Status.sql
 
-## Step 6: Execute Procedures
+## Step 7: Execute Procedures
 Once the Triggers are executed, the stored procedure scripts are to be executed in the following order:
 1. add_product_proc.sql
    
@@ -99,7 +104,7 @@ Once the Triggers are executed, the stored procedure scripts are to be executed 
 
 5. update_logistics_proc.sql
 
-## Step 7: Execute Functions
+## Step 8: Execute Functions
 Once the Procedure script execution is successful, the different function scripts need to be executed, from the Functions folder:
 1. get_average_order_value_function.sql
 
@@ -109,7 +114,7 @@ Once the Procedure script execution is successful, the different function script
 
 4. get_failed_payment_consumer_function.sql
 
-## Step 8: Execute Report
+## Step 9: Execute Report
 After the successful execution of Functions, the four report scripts need to be executed.
 
 1. get_average_order_value_function.sql
@@ -119,8 +124,3 @@ After the successful execution of Functions, the four report scripts need to be 
 3. get_consumer_order_history_function.sql
 
 4. get_failed_payment_consumer_function.sql
-
-## Step 9: Create Users and Grant Access
-To set up standard users and assign them the appropriate roles, execute the following script:
-
-User_grant.sql - This script creates user accounts for farmers, consumers and other roles, granting them the necessary permissions to interact with the database. Please note that User_grant.sql needs to be run under the original Database Admin
