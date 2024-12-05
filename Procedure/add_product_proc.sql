@@ -61,3 +61,4 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error adding product: ' || SQLERRM);
 END;
 /
+GRANT EXECUTE ON add_product TO farmer;
